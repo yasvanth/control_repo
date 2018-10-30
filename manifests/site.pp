@@ -4,7 +4,7 @@ node 'master.puppet.vm' {
   include role::master_server
   file { '/root/README':
     ensure => present,
-    content => $fqdn,
+    content => "This host is ${fqdn}\n",
   }
 }
 node /^web/ {
